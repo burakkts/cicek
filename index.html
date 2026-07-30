@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💐 Küçük Bir Hediye</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(180deg,#fffdf7,#fff5f7);
+overflow:hidden;
+}
+
+#start{
+text-align:center;
+transition:.8s;
+}
+
+h1{
+font-size:42px;
+color:#444;
+margin-bottom:20px;
+}
+
+p{
+font-size:22px;
+color:#777;
+margin-bottom:35px;
+}
+
+button{
+padding:18px 45px;
+font-size:20px;
+border:none;
+border-radius:40px;
+background:#ff6b8b;
+color:white;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ff4d73;
+}
+
+#gift{
+display:none;
+text-align:center;
+animation:fade 1s;
+}
+
+.message{
+margin-top:30px;
+font-size:38px;
+color:#444;
+font-weight:bold;
+opacity:0;
+animation:appear 2s forwards;
+animation-delay:1.2s;
+}
+
+.small{
+margin-top:18px;
+font-size:24px;
+color:#777;
+opacity:0;
+animation:appear 2s forwards;
+animation-delay:2.8s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+@keyframes appear{
+to{
+opacity:1;
+}
+}
+
+.bouquet{
+position:relative;
+width:260px;
+height:340px;
+margin:auto;
+animation:sway 4s ease-in-out infinite;
+}
+
+@keyframes sway{
+0%{transform:rotate(-2deg);}
+50%{transform:rotate(2deg);}
+100%{transform:rotate(-2deg);}
+}
+
+.flower{
+position:absolute;
+width:70px;
+height:70px;
+animation:bloom 1s ease forwards;
+transform:scale(0);
+}
+
+@keyframes bloom{
+to{
+transform:scale(1);
+}
+}
+
+.petal{
+position:absolute;
+width:26px;
+height:26px;
+background:#ff7aa5;
+border-radius:50%;
+}
+
+.center{
+position:absolute;
+width:24px;
+height:24px;
+background:#ffd34d;
+border-radius:50%;
+top:23px;
+left:23px;
+z-index:5;
+}
+
+.stem{
+position:absolute;
+width:6px;
+height:120px;
+background:#3f9d5b;
+left:32px;
+top:60px;
+border-radius:10px;
+}
+
+.leaf{
+position:absolute;
+width:24px;
+height:12px;
+background:#4caf50;
+border-radius:20px 0 20px 0;
+}
+
+.sparkle{
+position:absolute;
+font-size:22px;
+animation:float 5s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(50px);
+opacity:0;
+}
+30%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div id="start">
+<h1>💝</h1>
+<p><b>Burak'ın sana küçük bir hediyesi var.</b><br><br>Hazırsan dokun.</p>
+
+<button onclick="showGift()">Görmek İçin Dokun</button>
+</div>
+
+<div id="gift">
+
+<div class="bouquet">
+
+<div class="flower" style="left:95px;top:0;animation-delay:.2s;">
+<div class="petal" style="top:0;left:22px;"></div>
+<div class="petal" style="left:0;top:22px;"></div>
+<div class="petal" style="right:0;top:22px;"></div>
+<div class="petal" style="bottom:0;left:22px;"></div>
+<div class="petal" style="top:8px;left:8px;"></div>
+<div class="petal" style="top:8px;right:8px;"></div>
+<div class="center"></div>
+<div class="stem"></div>
+<div class="leaf" style="top:100px;left:5px;"></div>
+<div class="leaf" style="top:70px;left:38px;transform:rotate(180deg);"></div>
+</div>
+
+<div class="flower" style="left:30px;top:45px;animation-delay:.5s;">
+<div class="petal" style="top:0;left:22px;background:#ff93c2;"></div>
+<div class="petal" style="left:0;top:22px;background:#ff93c2;"></div>
+<div class="petal" style="right:0;top:22px;background:#ff93c2;"></div>
+<div class="petal" style="bottom:0;left:22px;background:#ff93c2;"></div>
+<div class="center"></div>
+<div class="stem"></div>
+</div>
+
+<div class="flower" style="left:160px;top:45px;animation-delay:.8s;">
+<div class="petal" style="top:0;left:22px;background:#ffb347;"></div>
+<div class="petal" style="left:0;top:22px;background:#ffb347;"></div>
+<div class="petal" style="right:0;top:22px;background:#ffb347;"></div>
+<div class="petal" style="bottom:0;left:22px;background:#ffb347;"></div>
+<div class="center"></div>
+<div class="stem"></div>
+</div>
+
+</div>
+
+<div class="message">
+💐 Bunlar senin için.
+</div>
+
+<div class="small">
+Her gün yüzünün gülmesini istiyorum. ❤️
+</div>
+
+</div>
+
+<script>
+
+function showGift(){
+
+document.getElementById("start").style.display="none";
+document.getElementById("gift").style.display="block";
+
+for(let i=0;i<30;i++){
+
+let s=document.createElement("div");
+
+s.className="sparkle";
+
+s.innerHTML=Math.random()>0.5?"✨":"❤";
+
+s.style.left=Math.random()*100+"vw";
+
+s.style.top="100vh";
+
+s.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(s);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
